@@ -1,0 +1,35 @@
+{
+  "name": "switchjs",
+  "version": "1.0.0",
+  "main": "app\\index.js",
+  "scripts": {
+    "test": "npm run cover",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+    "show-cover": "lite-server --baseDir=coverage/lcov-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/shavyg2/ecss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/shavyg2/ecss#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "tslib": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/istanbul": "^0.4.29",
+    "@types/mocha": "^2.2.41",
+    "@types/sinon": "^2.2.2",
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "lite-server": "^2.3.0",
+    "mocha": "^3.4.1",
+    "sinon": "^2.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
+}
