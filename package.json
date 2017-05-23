@@ -7,13 +7,8 @@
     "cover": "istanbul cover node_modules/mocha/bin/_mocha",
     "show-cover": "lite-server --baseDir=coverage/lcov-report"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/shavyg2/ecss.git"
-  },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/shavyg2/ecss#readme",
   "dependencies": {
     "debug": "^2.6.8",
     "tslib": "^1.7.1"
@@ -31,5 +26,13 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shavyg2/switchjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shavyg2/switchjs/issues"
+  },
+  "homepage": "https://github.com/shavyg2/switchjs#readme",
   "description": ""
 }

@@ -20,9 +20,7 @@ export class SwitchAsync<T> {
 
     private _default: any;
 
-    constructor(options: Partial<SwitchOption> = {}) {
-
-        ;
+    constructor(options: Partial<SwitchOption<T>> = {}) {
 
         const { allowFall, compareFunction } = options;
         this.allowFall = allowFall;
@@ -35,8 +33,6 @@ export class SwitchAsync<T> {
 
             //trust them here
             this._default = await PRE_USER_SWITCH_BLOCK(switch_case_builder, switch_input);
-
-            //start my shit here
 
             await this.start();
 

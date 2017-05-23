@@ -1,6 +1,7 @@
 import { Switch, SwitchOption } from '../index';
 import * as sinon from "sinon";
 import { expect } from "chai";
+import { compareFunction } from '../switch.option';
 
 describe("Switch", () => {
 
@@ -32,7 +33,11 @@ describe("Switch", () => {
 
 
     it("should use the default case", async function () {
-        let { _switch, _case } = new Switch();
+        let { _switch, _case } = new Switch<string>({
+            compareFunction:(x,y)=>{
+                return x===y;
+            }
+        });
         let spy = sinon.spy();
 
         let test = "test";

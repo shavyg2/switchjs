@@ -22,11 +22,20 @@ function PRE_USER_SWITCH_CASE(block: any, ...args: any[]) {
 export class Switch<T> {
 
 
+    private switchcaseinput: T;
+
+
+    private cases = [];
+
+
+    private userCompare: any;
+
+
+    private allowFall: boolean;
+
     private _default: any;
 
-    constructor(options: Partial<SwitchOption> = {}) {
-
-        ;
+    constructor(options: Partial<SwitchOption<T>> = {}) {
 
         const { allowFall, compareFunction } = options;
         this.allowFall = allowFall;
@@ -35,16 +44,12 @@ export class Switch<T> {
         //don't trust em
         this.userCompare = compareFunction;
         this._switch = (switch_input: T, switch_case_builder: (switch_input?: T) => void) => {
+            this.cases.length = 0
             this.switchcaseinput = switch_input;
-
             //trust them here
             this._default = PRE_USER_SWITCH_BLOCK(switch_case_builder, switch_input);
-
             //start my shit here
-            
-            let r = this.start();
-
-            ;
+            this.start();
         }
         this._case = (switch_compare_input: any, switch_case_function: () => (string | void)) => {
             this.cases.push([switch_compare_input, switch_case_function]);
@@ -103,7 +108,7 @@ export class Switch<T> {
                     case_resolved = has_user_implementation_of_compare() ?
                         this.userCompare(this.switchcaseinput, $case) :
                         this.switchcaseinput === $case;
-                    
+
                 }
             }
 
@@ -140,15 +145,5 @@ export class Switch<T> {
     _case: (switch_compare_input: any, switch_case_block: () => (string | void)) => void;
 
 
-    private switchcaseinput: T;
-
-
-    private cases = [];
-
-
-    private userCompare: any;
-
-
-    private allowFall: boolean;
 
 }

@@ -30,7 +30,11 @@ describe("Switch", function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var _a, _switch, _case, spy, test;
             return tslib_1.__generator(this, function (_b) {
-                _a = new index_1.Switch(), _switch = _a._switch, _case = _a._case;
+                _a = new index_1.Switch({
+                    compareFunction: function (x, y) {
+                        return x === y;
+                    }
+                }), _switch = _a._switch, _case = _a._case;
                 spy = sinon.spy();
                 test = "test";
                 _switch(test, function () {

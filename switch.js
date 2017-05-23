@@ -21,18 +21,17 @@ var Switch = (function () {
         if (options === void 0) { options = {}; }
         var _this = this;
         this.cases = [];
-        ;
         var allowFall = options.allowFall, compareFunction = options.compareFunction;
         this.allowFall = allowFall;
         //don't trust em
         this.userCompare = compareFunction;
         this._switch = function (switch_input, switch_case_builder) {
+            _this.cases.length = 0;
             _this.switchcaseinput = switch_input;
             //trust them here
             _this._default = PRE_USER_SWITCH_BLOCK(switch_case_builder, switch_input);
             //start my shit here
-            var r = _this.start();
-            ;
+            _this.start();
         };
         this._case = function (switch_compare_input, switch_case_function) {
             _this.cases.push([switch_compare_input, switch_case_function]);

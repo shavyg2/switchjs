@@ -30,7 +30,6 @@ var SwitchAsync = (function () {
         if (options === void 0) { options = {}; }
         var _this = this;
         this.cases = [];
-        ;
         var allowFall = options.allowFall, compareFunction = options.compareFunction;
         this.allowFall = allowFall;
         //don't trust em
@@ -47,10 +46,8 @@ var SwitchAsync = (function () {
                     case 1:
                         //trust them here
                         _a._default = _b.sent();
-                        //start my shit here
                         return [4 /*yield*/, this.start()];
                     case 2:
-                        //start my shit here
                         _b.sent();
                         return [2 /*return*/];
                 }
