@@ -1,4 +1,3 @@
-import * as debug from "debug";
 import { SwitchOption } from './switch.option';
 
 async function PRE_USER_SWITCH_BLOCK(block: any, ...args: any[]) {
@@ -7,7 +6,6 @@ async function PRE_USER_SWITCH_BLOCK(block: any, ...args: any[]) {
 
 
 async function PRE_USER_SWITCH_CASE(block: any, ...args: any[]) {
-    ;
     return block(...args);
 }
 
@@ -117,13 +115,11 @@ export class SwitchAsync<T> {
 
             ;
             await this._default();
-
-            ;
         }
 
     }
     _switch: (switch_input: T, switch_case_builder: ((switch_input?: T) => void)) => Promise<void>
-    _case: (switch_compare_input: any, switch_case_block: () => (string | void)) => Promise<void>;
+    _case: (switch_compare_input: any, switch_case_block: () => (Promise<(string | void)>)|string|void) => Promise<void>;
 
 
     private switchcaseinput: T;

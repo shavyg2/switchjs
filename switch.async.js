@@ -19,7 +19,6 @@ function PRE_USER_SWITCH_CASE(block) {
     }
     return tslib_1.__awaiter(this, void 0, void 0, function () {
         return tslib_1.__generator(this, function (_a) {
-            ;
             return [2 /*return*/, block.apply(void 0, args)];
         });
     });
@@ -123,7 +122,6 @@ var SwitchAsync = (function () {
                         return [4 /*yield*/, this._default()];
                     case 8:
                         _b.sent();
-                        ;
                         _b.label = 9;
                     case 9: return [2 /*return*/];
                 }

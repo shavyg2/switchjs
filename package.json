@@ -5,7 +5,8 @@
   "scripts": {
     "test": "npm run cover",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha",
-    "show-cover": "lite-server --baseDir=coverage/lcov-report"
+    "show-cover": "lite-server --baseDir=coverage/lcov-report",
+    "compile":"tsc"
   },
   "author": "",
   "license": "ISC",
