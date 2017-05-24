@@ -7,6 +7,7 @@ var chai_1 = require("chai");
 describe("Switch Async", function () {
     it("should match the first case", function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _this = this;
             var _a, _switch, _case, spy, test;
             return tslib_1.__generator(this, function (_b) {
                 switch (_b.label) {
@@ -15,9 +16,12 @@ describe("Switch Async", function () {
                         spy = sinon.spy();
                         test = "test";
                         return [4 /*yield*/, _switch(test, function () {
-                                _case("test", function () {
-                                    spy();
-                                });
+                                _case("test", function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                                    return tslib_1.__generator(this, function (_a) {
+                                        spy();
+                                        return [2 /*return*/];
+                                    });
+                                }); });
                                 return function () {
                                     throw new Error("mistakes were made");
                                 };

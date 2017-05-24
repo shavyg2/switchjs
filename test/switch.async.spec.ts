@@ -14,7 +14,7 @@ describe("Switch Async", () => {
 
         await _switch(test, () => {
 
-            _case("test", () => {
+            _case("test", async () => {
                 spy();
             })
 
